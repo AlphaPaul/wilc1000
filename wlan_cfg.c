@@ -395,7 +395,7 @@ void cfg_indicate_rx(struct wilc *wilc, u8 *frame, int size,
 		rsp->type = WILC_CFG_RSP_STATUS;
 		rsp->seq_no = msg_id;
 		/* call host interface info parse as well */
-		pr_info("%s: Info message received\n", __func__);
+		pr_info("%s: Info message received %d\n", __func__ , size);
 		wilc_gnrl_async_info_received(wilc, frame - 4, size + 4);
 		break;
 
