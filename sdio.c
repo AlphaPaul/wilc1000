@@ -638,7 +638,7 @@ static int wilc_sdio_read(struct wilc *wilc, u32 addr, u8 *buf, u32 size)
 			if (ret)
 				return ret;
 		}
-		pr_info("Command 53 Read: %d %d\n", (int)cmd.count, (int)cmd.block_size);
+		// pr_info("Command 53 Read: %d %d\n", (int)cmd.count, (int)cmd.block_size);
 		ret = wilc_sdio_cmd53(wilc, &cmd);
 		if (ret) {
 			dev_err(&func->dev,
