@@ -1129,7 +1129,7 @@ int wilc_wlan_handle_txq(struct wilc *wilc, u32 *txq_count)
 					PRINT_ER(vif->ndev,
 						  "fail read reg WILC_INTERRUPT_CORTUS_0..\n");
 					errCount ++;
-					if ( errCount >= 5 0){
+					if ( errCount >= 5 ){
 						break;
 					}
 					
