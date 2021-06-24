@@ -1102,6 +1102,7 @@ int wilc_wlan_handle_txq(struct wilc *wilc, u32 *txq_count)
 				}
 			} while (--timeout);
 		} else {
+			int errCount = 0;
 			ret = func->hif_write_reg(wilc,
 					      WILC_HOST_VMM_CTL,
 					      0);
@@ -1127,7 +1128,11 @@ int wilc_wlan_handle_txq(struct wilc *wilc, u32 *txq_count)
 				if (ret) {
 					PRINT_ER(vif->ndev,
 						  "fail read reg WILC_INTERRUPT_CORTUS_0..\n");
-					break;
+					errCount ++;
+					if ( errCount >= 5 0){
+						break;
+					}
+					
 				}
 				if (reg == 0) {
 					/* Get the entries */
